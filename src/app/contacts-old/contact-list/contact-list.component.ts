@@ -1,7 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {User} from "../../model/user.model";
 import {UserService} from "../../shared/user.service";
-import {ActivatedRoute} from "@angular/router";
 
 @Component({
     selector: 'app-contact-list',
@@ -10,16 +9,17 @@ import {ActivatedRoute} from "@angular/router";
 })
 export class ContactListComponent implements OnInit {
 
-    /* Container component */
-
+    isLoaded = false;
     users: User[] = [];
 
-    constructor(private route: ActivatedRoute) { }
+    constructor(service: UserService) {
+        service.getUsers().subscribe(users => {
+            this.users = users;
+            this.isLoaded = true;
+        });
+    }
 
     ngOnInit() {
-        this.route.data.subscribe(({ users }) => {
-            this.users = users;
-        });
     }
 
 }

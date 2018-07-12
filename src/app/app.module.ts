@@ -22,6 +22,10 @@ const routes: Routes = [
             {
                 path: 'users',
                 loadChildren: './contacts/contacts.module#ContactsModule'
+            },
+            {
+                path: 'users-old',
+                loadChildren: './contacts-old/contacts.module#ContactsOldModule'
             }
         ]
     }

@@ -18,8 +18,7 @@ export class ContactPageComponent implements OnInit {
     user$: Observable<User>;
 
     constructor(route: ActivatedRoute) {
-        this.user$ = route.data
-            .map(({ user }) => user);
+        this.user$ = route.data.map(({ user }) => user);
     }
 
     ngOnInit() {

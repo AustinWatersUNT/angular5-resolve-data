@@ -1,0 +1,12 @@
+.loading-background {
+    position: absolute;
+    background-color: rgba(225, 225, 225, .8); 
+    top: 0; 
+    left: 0; 
+    height: 100%;
+    width: 100%;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
